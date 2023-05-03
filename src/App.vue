@@ -1,5 +1,6 @@
 <script setup>
   import Dbutton from '../src/components/Dbutton.vue'
+  import DbuttonPlus from './components/DbuttonPlus.vue';
   // 引入新的按钮
   import { ref } from 'vue';
   import { ElMessage } from 'element-plus'
@@ -128,6 +129,10 @@ const confirm = () => {
           }, 1000);
 }
 
+const btnTest = () => {
+  console.log('测试按钮点击')
+}
+
 </script>
 
 <template>
@@ -185,7 +190,7 @@ const confirm = () => {
              >
              合成
           </Dbutton>
-           
+           <DbuttonPlus @click="btnTest">按钮测试2</DbuttonPlus>
           </div>
         </div>
     </div>
