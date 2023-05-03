@@ -58,7 +58,7 @@ const clEvent = () => {
     font-size: 20px;
     font-weight: 500;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background-image: linear-gradient(rgb(43,190,96),rgb(15,157,88));
+    background-image: linear-gradient(rgb(184, 179, 221),rgb(75, 176, 216));
     color: #000;
     text-decoration: none;
     /* 字体 */
@@ -70,7 +70,7 @@ const clEvent = () => {
 }
 
 .btn:hover {
-    text-decoration: underline;
+
     color: #fff;
 }
 
@@ -82,7 +82,8 @@ const clEvent = () => {
     transform: translate(-50%,-50%);
     width: 0;
     height: 0;
-    background-color: #000;
+    /* background-color: #000; */
+    background-image: linear-gradient(90deg, #a4c243, #5a1ee6);
     border-radius: 50%;
     transition: width 0.5s ,height 0.5s;
 }
