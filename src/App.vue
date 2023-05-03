@@ -1,5 +1,6 @@
 <script setup>
   import Dbutton from '../src/components/Dbutton.vue'
+  // 引入新的按钮
   import { ref } from 'vue';
   import { ElMessage } from 'element-plus'
   import { Check } from '@element-plus/icons-vue'
@@ -147,6 +148,9 @@ const confirm = () => {
              >
              上传视频文件
           </Dbutton>
+<!--          按钮使用例子-->
+
+
           <Dbutton 
             @click="upload1"
              >
