@@ -1,4 +1,5 @@
 <script setup>
+  import Dbutton from '../src/components/Dbutton.vue'
   import { ref } from 'vue';
   import { ElMessage } from 'element-plus'
   import { Check } from '@element-plus/icons-vue'
@@ -120,6 +121,10 @@ const mix = () => {
 // 点击确认按钮
 const confirm = () => {
 // 点击确认后对msgtext的操作
+  msgText.value = msgText.value + '\n' + '正在处理，请稍后...'
+  setTimeout(() =>{
+            msgText.value = '收到' + input.value
+          }, 1000);
 }
 
 </script>
@@ -137,11 +142,23 @@ const confirm = () => {
         </div>
 
         <div class="select">
-          <el-button type="primary" @click="upload0">上传视频文件</el-button>
-          <el-button type="primary" @click="upload1">上传音频文件</el-button>
+          <Dbutton 
+            @click="upload0"
+             >
+             上传视频文件
+          </Dbutton>
+          <Dbutton 
+            @click="upload1"
+             >
+             上传音频文件
+          </Dbutton>
         </div>
         <div class="up">
-          <el-button type="primary" @click="countTime">确认上传资源文件</el-button>
+          <Dbutton 
+            @click="countTime"
+             >
+             确认上传资源文件
+          </Dbutton>
           <div v-show="pro" class="pro">
             <el-progress  type="circle" :percentage="percentages" :status="isSuccess">
               <el-button v-if="percentages == 100" type="success" :icon="Check" circle />
@@ -149,13 +166,22 @@ const confirm = () => {
           </div>
         </div>
         <div class="chat">
-          <p style="color: #3678ac;">{{ msgText }}</p>
+          <p style="color: #3678ac; white-space: pre-line; font-size: 20px;">{{ msgText }}</p>
           <div class="msg">
             <el-input v-model="input" placeholder="Please input" clearable />
           </div>
           <div>
-            <el-button type="primary" @click="confirm">确认</el-button>
-            <el-button type="primary" @click="mix">合成</el-button>
+            <Dbutton 
+            @click="confirm"
+             >
+             确认
+          </Dbutton>
+          <Dbutton 
+            @click="mix"
+             >
+             合成
+          </Dbutton>
+           
           </div>
         </div>
     </div>
@@ -167,7 +193,7 @@ const confirm = () => {
   background-color: #0fa8f9;
   min-height: 98VH;
   padding: 50px;
-  
+  font-family: "楷体","楷体_GB2312";
 }
 
 .upload-btn {
@@ -211,9 +237,14 @@ const confirm = () => {
 .chat {
   margin-top: 20px;
   margin-left: 50px;
+  white-space: pre-line;
 }
 
 .msg{
   margin: 0 0 10px 0;
+}
+
+.btn {
+  font-size: large;
 }
 </style>
