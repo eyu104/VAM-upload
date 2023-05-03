@@ -57,7 +57,7 @@ const clEvent = () => {
     padding: 20px 30px;
     font-size: 20px;
     font-weight: 500;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     background-image: linear-gradient(rgb(184, 179, 221),rgb(75, 176, 216));
     color: #000;
     text-decoration: none;
@@ -68,6 +68,11 @@ const clEvent = () => {
     overflow: hidden;
     transition: .5s;
 }
+
+.btn:active {
+    box-shadow: none;
+}
+
 
 .btn:hover {
 
