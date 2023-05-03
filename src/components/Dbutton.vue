@@ -22,10 +22,12 @@ const addSpan = (event) => {
 </script>
 
 <template>
-    <button ref="b" @click="addSpan" >
-        <slot></slot>
-    <span ref="s" v-if="showSpan" :style="{left: spanL + 'px',top: spanT + 'px'}"></span>
-    </button>
+    <div class="btn-div">
+        <button ref="b" @click="addSpan" >
+            <slot></slot>
+            <span ref="s" v-if="showSpan" :style="{left: spanL + 'px',top: spanT + 'px'}"></span>
+        </button>
+    </div>
 </template>
 
 <style scoped>
@@ -35,6 +37,11 @@ const addSpan = (event) => {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.btn-div {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 button {
