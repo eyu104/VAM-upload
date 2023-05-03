@@ -64,6 +64,10 @@ button {
     position: relative;
 }
 
+button:hover {
+    background-image: linear-gradient(90deg, #0ae2fe, #8049ff);
+}
+
 button span {
     background-color: #fff;
     border-radius: 50%;
