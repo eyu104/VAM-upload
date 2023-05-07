@@ -2,6 +2,7 @@
   import Dbutton from '../src/components/Dbutton.vue'
   import DbuttonPlus from './components/DbuttonPlus.vue';
   // 引入新的按钮
+  import Dsearch from './components/Dsearch.vue'
   import { ref } from 'vue';
   import { ElMessage } from 'element-plus'
   import { Check } from '@element-plus/icons-vue'
@@ -123,7 +124,7 @@ const mix = () => {
 // 点击确认按钮
 const confirm = () => {
 // 点击确认后对msgtext的操作
-  msgText.value = msgText.value + '\n' + '正在处理，请稍后...'
+  msgText.value =  '正在处理，请稍后...'
   setTimeout(() =>{
             msgText.value = '收到' + input.value
           }, 1000);
@@ -191,6 +192,7 @@ const btnTest = () => {
              合成
           </Dbutton>
            <DbuttonPlus @click="btnTest">按钮测试2</DbuttonPlus>
+           <Dsearch />
           </div>
         </div>
     </div>

@@ -17,7 +17,7 @@ const addSpan = (event) => {
     spanT.value = y
     setTimeout(()=> {
         showSpan.value = false
-    },300)
+    },1000)
 }
 </script>
 
@@ -76,7 +76,7 @@ button span {
     transform: translate(-50%, -50%);
 
     /* 动画速度 */
-    animation: animate 2s ease-out infinite;
+    animation: animate 1s ease-out infinite;
 }
 @keyframes animate {
     0% {
@@ -87,7 +87,7 @@ button span {
     100% {
         width: 200vmin;
         height: 200vmin;
-        opacity: 0.5;
+        opacity: 0;
     }
 }
 

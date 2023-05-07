@@ -4,7 +4,7 @@ const spanT = ref(100)
 const spanL = ref(100)
 const clickEvent = defineEmits(['click'])
 const b = ref(null)
-
+const m = ref('')
 
 
 
@@ -18,7 +18,11 @@ const findPOS = (event) => {
 }
 
 const clEvent = () => {
-    clickEvent('click','click')
+    // m.value = 'click-div'
+    // setTimeout(() => {
+    //     m.value = ''
+    // }, 1000);
+    // clickEvent('click','click')
 }
 </script>
 
@@ -31,9 +35,10 @@ const clEvent = () => {
 }" @mouseenter="findPOS" @mousemove="findPOS" @click="clEvent">
         <span>
             <slot></slot>
-        </span></button>
+        </span>
+        <div :class="m"></div>
+    </button>
     </div>
-
 </template>
 
 <style scoped>
@@ -74,8 +79,8 @@ const clEvent = () => {
 }
 
 
-.btn:hover {
 
+.btn:hover {
     color: #fff;
 }
 
@@ -88,7 +93,7 @@ const clEvent = () => {
     width: 0;
     height: 0;
     /* background-color: #000; */
-    background-image: linear-gradient(90deg, #a4c243, #5a1ee6);
+    background-image: linear-gradient(90deg, #49add4, #592ebe);
     border-radius: 50%;
     transition: width 0.5s ,height 0.5s;
 }
@@ -98,8 +103,40 @@ const clEvent = () => {
     height: 400px;
 }
 
+
+
+
+
 .btn span {
     position: relative;
     z-index: 1;
+}
+
+.click-div {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* left: 50%;
+    top: 50%; */
+    transform: translate(-50%,-50%);
+    left: var(--my-paramX);
+    top: var(--my-paramY);
+    background-color: #fff;
+
+    animation: animate 0.5s ease-out infinite;
+}
+@keyframes animate {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 200vmin;
+        height: 200vmin;
+        opacity: 0;
+    }
 }
 </style>
